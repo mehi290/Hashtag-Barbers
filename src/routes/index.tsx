@@ -200,7 +200,15 @@ const PRICING = {
   ],
 };
 
-function Reveal({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+function Reveal({
+  children,
+  className = "",
+  delay = 0,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  delay?: number;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   useEffect(() => {
@@ -228,6 +236,7 @@ function Reveal({ children, className = "" }: { children: React.ReactNode; class
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(32px)",
         transition: "opacity 0.65s ease, transform 0.65s ease",
+        transitionDelay: `${delay}ms`,
       }}
     >
       {children}
