@@ -849,7 +849,7 @@ function Wonderstouch() {
       {/* HERO */}
       <section
         style={{
-          minHeight: "100vh",
+          minHeight: "110vh",
           position: "relative",
           overflow: "hidden",
           display: "flex",
@@ -858,23 +858,27 @@ function Wonderstouch() {
           paddingBottom: isMobile ? 100 : 120,
         }}
       >
-        <div
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
           style={{
             position: "absolute",
             inset: 0,
-            backgroundImage:
-              "url(https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1920&q=85)",
-            backgroundSize: "cover",
-            backgroundPosition: "center 40%",
-            animation: "ws-kenburns 22s ease-in-out infinite alternate",
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
           }}
-        />
+        >
+          <source src="/main hero.mp4" type="video/mp4" />
+        </video>
         <div
           style={{
             position: "absolute",
             inset: 0,
             background:
-              "linear-gradient(180deg, rgba(10,10,10,0.78) 0%, rgba(10,10,10,0.45) 55%, rgba(10,10,10,0.88) 100%)",
+              "linear-gradient(180deg, rgba(10,10,10,0.5) 0%, rgba(10,10,10,0.2) 55%, rgba(10,10,10,0.6) 100%)",
           }}
         />
         <div
@@ -882,82 +886,34 @@ function Wonderstouch() {
             position: "relative",
             zIndex: 1,
             width: "100%",
-            maxWidth: 640,
-            marginLeft: "clamp(24px, 8vw, 160px)",
-            paddingRight: 24,
+            maxWidth: 800,
+            margin: "60px auto 0",
+            padding: "0 24px",
+            textAlign: "center",
           }}
         >
           <Reveal>
             <h1
               className="bebas"
               style={{
-                fontSize: "clamp(48px, 8vw, 92px)",
+                fontSize: "clamp(32px, 5vw, 60px)",
                 color: "#fff",
                 lineHeight: 0.95,
-                margin: 0,
+                margin: "0 auto",
                 letterSpacing: "0.005em",
               }}
             >
               WHERE SHARP MEN GET SHARPER
             </h1>
           </Reveal>
-          <Reveal delay={120}>
-            <p
-              style={{
-                fontSize: 17,
-                color: "#E8E0D5",
-                maxWidth: 520,
-                marginTop: 24,
-                lineHeight: 1.7,
-                fontFamily: "Inter",
-              }}
-            >
-              <span style={{ color: "#D4AF37", fontWeight: 600 }}>
-                Dubai &amp; Istanbul's premier barbershop
-              </span>{" "}
-              — razor-edge precision for the modern man.
-            </p>
-          </Reveal>
+
           <Reveal delay={240}>
-            <div style={{ display: "flex", alignItems: "center", gap: 28, marginTop: 36, flexWrap: "wrap" }}>
-              <GoldButton onClick={openBook}>BOOK YOUR CHAIR</GoldButton>
-              <button
-                onClick={() => {
-                  document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
-                }}
-                style={{
-                  background: "transparent",
-                  border: "none",
-                  color: "#fff",
-                  fontFamily: "Inter",
-                  fontSize: 12,
-                  fontWeight: 600,
-                  letterSpacing: "0.2em",
-                  textTransform: "uppercase",
-                  cursor: "pointer",
-                  padding: "4px 0",
-                  borderBottom: "1px solid rgba(212,175,55,0.6)",
-                }}
-              >
-                Explore services →
-              </button>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 28, marginTop: 36, flexWrap: "wrap" }}>
+              <GoldButton onClick={openBook}>Book Appointment</GoldButton>
             </div>
           </Reveal>
         </div>
-        <div
-          style={{
-            position: "absolute",
-            bottom: 28,
-            left: "50%",
-            transform: "translateX(-50%)",
-            animation: "ws-bounce 2s infinite",
-            color: "#D4AF37",
-            opacity: 0.6,
-            zIndex: 1,
-          }}
-        >
-          <ChevronDown size={26} />
-        </div>
+
       </section>
 
       {/* GOLD STATS BAR */}
