@@ -117,7 +117,6 @@ const SUB_SERVICES = [
   { name: "MANICURE FOR MEN" },
   { name: "PEDICURE FOR MEN" },
   { name: "FACIAL Treatment" },
-  { name: "Hair Removal" },
 ];
 
 const PRICE_LIST_SUB = [
@@ -128,7 +127,6 @@ const PRICE_LIST_SUB = [
   { name: "Beard Lineup & Trimming" },
   { name: "Manicure & Pedicure" },
   { name: "Facial Treatment" },
-  { name: "Waxing" },
 ];
 
 const SHOP_SUB = [
@@ -1069,17 +1067,38 @@ function Wonderstouch() {
           {[...Array(2)].map((_, i) => (
             <Fragment key={i}>
               {[
-                { name: "Hair Cut", img: "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=500&q=80" },
-                { name: "Braids", img: "https://images.unsplash.com/photo-1620331711123-2895f9c4613c?w=500&q=80" },
-                { name: "Hair Perm & Styling", img: "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=500&q=80" },
-                { name: "Grooming Packages", img: "https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=500&q=80" },
-                { name: "Beard Trimming", img: "https://images.unsplash.com/photo-1590540179852-2110a54f813a?w=500&q=80" },
-                { name: "Manicure", img: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=500&q=80" },
-                { name: "Pedicure", img: "https://images.unsplash.com/photo-1595121685340-a1993416629d?w=500&q=80" },
-                { name: "Facial Treatment", img: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=500&q=80" },
-                { name: "Hair Removal", img: "https://images.unsplash.com/photo-1559599101-f09722fb4948?w=500&q=80" },
+                { name: "Hair Cut", video: "/long hair cut men.mp4" },
+                { name: "Kids Hair Cut", video: "/baby men hair cut.mp4" },
+                { name: "Medium Fade Hair Cut", video: "/medium fade hair cut men.mp4" },
+                { name: "Skin Fade Haircut", video: "/skin fade hair cut.mp4" },
+                { name: "Twist Braids", video: "/twist braids.mp4" },
+                { name: "Cornrow Braids", video: "/cornrow briads men.mp4" },
+                { name: "Hair Perm & Styling", video: "/perm hairstyle.mp4" },
+                { name: "Grooming Packages", video: "/groooming package.mp4" },
+                { name: "Beard Trimming", video: "/beard lineup .mp4" },
+                { name: "Manicure", img: "/manicure man.jpg" },
+                { name: "Pedicure", video: "/pedicure men.mp4" },
+                { name: "Facial Treatment", img: "/FACIAl.jpeg" },
               ].map((s, idx) => (
-                <div key={idx} className="service-card" style={{ backgroundImage: `url(${s.img})` }}>
+                <div key={idx} className="service-card" style={{ backgroundImage: s.img ? `url("${s.img}")` : "none" }}>
+                  {s.video && (
+                    <video
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      style={{
+                        position: "absolute",
+                        inset: 0,
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        zIndex: 0
+                      }}
+                    >
+                      <source src={s.video} type="video/mp4" />
+                    </video>
+                  )}
                   <div className="service-content">
                     <h3 className="bebas" style={{ fontSize: 32, color: "#fff", margin: "0 0 15px" }}>{s.name}</h3>
                     <button
