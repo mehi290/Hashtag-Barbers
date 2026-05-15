@@ -92,10 +92,6 @@ const SUB_SERVICES = [
     name: "Hair Cut",
     sub: ["Skin Fade Haircut", "Medium Fade Haircut", "Classic Hot Towel Shave"]
   },
-  {
-    name: "Braids",
-    sub: ["Twist Braids", "Cornrow Braids"]
-  },
   { name: "Hair  Perm & Styling" },
   { name: "Grooming Packages" },
   { name: "Beard Trimming" },
@@ -108,7 +104,6 @@ const PRICE_LIST_SUB = [
   { name: "Haircut" },
   { name: "Hair Perm" },
   { name: "Hair Coloring & Styling" },
-  { name: "Braids" },
   { name: "Beard Lineup & Trimming" },
   { name: "Manicure & Pedicure" },
   { name: "Facial Treatment" },
@@ -151,7 +146,6 @@ const SERVICES = [
 
 const GALLERY = [
   "/men-hair-style.mp4",
-  "/men-hair-braid.jpeg",
   "/perm-hairstyle.mp4",
   "/men-hair-color.mp4",
   "/our-work.mp4",
@@ -339,6 +333,31 @@ function VyneBarbershop() {
       el.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, []);
+
+  useEffect(() => {
+    const el = document.getElementById("reviews-scroll");
+    if (!el) return;
+    let interval: any;
+    const startScroll = () => {
+      interval = setInterval(() => {
+        if (el.scrollLeft >= el.scrollWidth / 3) {
+          el.scrollLeft = 0;
+        } else {
+          el.scrollLeft += 1;
+        }
+      }, 25); // Slightly slower for readability
+    };
+    startScroll();
+    const handleMouseEnter = () => clearInterval(interval);
+    const handleMouseLeave = () => startScroll();
+    el.addEventListener("mouseenter", handleMouseEnter);
+    el.addEventListener("mouseleave", handleMouseLeave);
+    return () => {
+      clearInterval(interval);
+      el.removeEventListener("mouseenter", handleMouseEnter);
+      el.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, []);
   const [reviewIdx, setReviewIdx] = useState(0);
   const [bookOpen, setBookOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -462,9 +481,9 @@ function VyneBarbershop() {
           justifyContent: "space-between",
         }}
       >
-        <div style={{ height: 85, marginLeft: 20 }}>
+        <div style={{ height: 120, marginLeft: 20 }}>
           <img
-            src="/VYNE LOGO.jpeg"
+            src="/vyne logo.png"
             alt="VYNE BARBERSHOP Logo"
             style={{ height: "100%", width: "auto", display: "block" }}
           />
@@ -644,9 +663,9 @@ function VyneBarbershop() {
             }}
           >
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-              <div style={{ height: 60 }}>
+              <div style={{ height: 90 }}>
                 <img
-                  src="/VYNE LOGO.jpeg"
+                  src="/vyne logo.png"
                   alt="VYNE BARBERSHOP Logo"
                   style={{ height: "100%", width: "auto", display: "block" }}
                 />
@@ -1117,43 +1136,47 @@ function VyneBarbershop() {
                 scrollBehavior: "smooth"
               }}
             >
-              {[
-                { name: "Gujjar Badsha", initial: "G", location: "Helio, Ajman", text: "Best experience ever, the staff is very professional and the atmosphere is great." },
-                { name: "Sufaid cherumoth", initial: "S", location: "Helio, Ajman", text: "Highly recommended for anyone looking for a precision cut in Ajman." },
-                { name: "Frank Lin", initial: "F", location: "Al Helio, Ajman", text: "Great experience with Davido. He really knows how to style according to face shape." },
-                { name: "James Wilson", initial: "J", location: "Helio, Ajman", text: "Premium products and excellent service. Worth every dirham." }
-              ].map((rev, idx) => (
-                <div key={idx} style={{
-                  flex: isMobile ? "0 0 85%" : "0 0 380px", background: "#1A1A1A", padding: "40px",
-                  display: "flex", flexDirection: "column", gap: 25, borderTop: "4px solid #D4AF37",
-                  position: "relative"
-                }}>
-                  <div style={{ display: "flex", gap: 4, marginBottom: -10 }}>
-                    {[...Array(5)].map((_, i) => <Star key={i} size={14} fill="#D4AF37" color="#D4AF37" />)}
-                  </div>
-                  <Quote size={32} color="#D4AF37" style={{ opacity: 0.8 }} />
-                  <p style={{
-                    fontSize: 16, color: "#eee", lineHeight: 1.8, margin: 0,
-                    fontStyle: "italic", fontWeight: 300
-                  }}>
-                    "{rev.text}"
-                  </p>
-                  <div style={{ marginTop: "auto", display: "flex", gap: 15, alignItems: "center" }}>
-                    <div style={{
-                      width: 40, height: 40, borderRadius: "50%", background: "#D4AF37",
-                      display: "flex", alignItems: "center", justifyContent: "center",
-                      color: "#000", fontWeight: "bold", fontSize: 14
+              {[...Array(3)].map((_, loopIdx) => (
+                <React.Fragment key={loopIdx}>
+                  {[
+                    { name: "Gujjar Badsha", initial: "G", location: "Helio, Ajman", text: "Best experience ever, the staff is very professional and the atmosphere is great." },
+                    { name: "Sufaid cherumoth", initial: "S", location: "Helio, Ajman", text: "Highly recommended for anyone looking for a precision cut in Ajman." },
+                    { name: "Frank Lin", initial: "F", location: "Al Helio, Ajman", text: "Great experience with Davido. He really knows how to style according to face shape." },
+                    { name: "James Wilson", initial: "J", location: "Helio, Ajman", text: "Premium products and excellent service. Worth every dirham." }
+                  ].map((rev, idx) => (
+                    <div key={`${loopIdx}-${idx}`} style={{
+                      flex: isMobile ? "0 0 85%" : "0 0 380px", background: "#1A1A1A", padding: "40px",
+                      display: "flex", flexDirection: "column", gap: 25, borderTop: "4px solid #D4AF37",
+                      position: "relative"
                     }}>
-                      {rev.initial}
-                    </div>
-                    <div>
-                      <div style={{ fontSize: 15, fontWeight: 600, color: "#fff" }}>{rev.name}</div>
-                      <div style={{ fontSize: 12, color: "#666" }}>
-                        {rev.location} • Google Reviews
+                      <div style={{ display: "flex", gap: 4, marginBottom: -10 }}>
+                        {[...Array(5)].map((_, i) => <Star key={i} size={14} fill="#D4AF37" color="#D4AF37" />)}
+                      </div>
+                      <Quote size={32} color="#D4AF37" style={{ opacity: 0.8 }} />
+                      <p style={{
+                        fontSize: 16, color: "#eee", lineHeight: 1.8, margin: 0,
+                        fontStyle: "italic", fontWeight: 300
+                      }}>
+                        "{rev.text}"
+                      </p>
+                      <div style={{ marginTop: "auto", display: "flex", gap: 15, alignItems: "center" }}>
+                        <div style={{
+                          width: 40, height: 40, borderRadius: "50%", background: "#D4AF37",
+                          display: "flex", alignItems: "center", justifyContent: "center",
+                          color: "#000", fontWeight: "bold", fontSize: 14
+                        }}>
+                          {rev.initial}
+                        </div>
+                        <div>
+                          <div style={{ fontSize: 15, fontWeight: 600, color: "#fff" }}>{rev.name}</div>
+                          <div style={{ fontSize: 12, color: "#666" }}>
+                            {rev.location} • Google Reviews
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
+                  ))}
+                </React.Fragment>
               ))}
             </div>
           </div>
@@ -1186,7 +1209,7 @@ function VyneBarbershop() {
             >
               {isMobile && (
                 <img
-                  src="/about%20image.jpeg"
+                  src="/vyne about us.jpeg"
                   alt="Barber at work"
                   style={{ width: "100%", height: 300, objectFit: "cover" }}
                 />
@@ -1245,7 +1268,7 @@ function VyneBarbershop() {
                 </div>
               </div>
               <img
-                src="/about%20image.jpeg"
+                src="/vyne about us.jpeg"
                 alt="About VYNE BARBERSHOP"
                 style={{
                   width: "100%",
