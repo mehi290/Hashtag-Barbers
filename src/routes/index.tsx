@@ -22,14 +22,14 @@ import {
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
-  component: Wonderstouch,
+  component: VyneBarbershop,
   head: () => ({
     meta: [
-      { title: "Wonderstouch — Men's Barbershop & Grooming Lounge | Dubai & Istanbul" },
+      { title: "VYNE BARBERSHOP — Men's Barbershop & Grooming Lounge | Dubai & Istanbul" },
       {
         name: "description",
         content:
-          "Wonderstouch is a premier men's barbershop with locations in Umm Al Sheif, Dubai and Elgün Sokağı, Istanbul. Precision cuts, beards, hot towel shaves.",
+          "VYNE BARBERSHOP is a premier men's barbershop with locations in Umm Al Sheif, Dubai and Elgün Sokağı, Istanbul. Precision cuts, beards, hot towel shaves.",
       },
     ],
   }),
@@ -76,9 +76,9 @@ const LOCATIONS: Record<
     hours: "Sat–Thu: 9:00 AM – 10:00 PM  •  Fri: 2:00 PM – 10:00 PM",
     currency: "AED",
     mapLabel: "Al Asmawi Building, Sheikh Zayed Road, Dubai",
-    // Matches the public Google listing card (“Wonderstouch Barbershop Dubai”) so the embed shows the same place, pin, and info panel as on Google Maps.
+    // Matches the public Google listing card (“VYNE BARBERSHOP Barbershop Dubai”) so the embed shows the same place, pin, and info panel as on Google Maps.
     mapSearchQuery:
-      "Wonderstouch Barbershop Dubai, Before Bentley show rooms, Al Asmawi Building - Ground floor, office #11 - Sheikh Zayed Rd - Umm Al Sheif - Dubai - United Arab Emirates",
+      "VYNE BARBERSHOP Barbershop Dubai, Before Bentley show rooms, Al Asmawi Building - Ground floor, office #11 - Sheikh Zayed Rd - Umm Al Sheif - Dubai - United Arab Emirates",
     mapZoom: 11,
   },
   istanbul: {
@@ -184,7 +184,7 @@ const GALLERY = [
 const REVIEWS = [
   {
     quote:
-      "The best fade I've ever had — and I've sat in chairs across London, Riyadh, and New York. Wonderstouch Dubai is on another level. The hot towel shave alone is worth the visit.",
+      "The best fade I've ever had — and I've sat in chairs across London, Riyadh, and New York. VYNE BARBERSHOP Dubai is on another level. The hot towel shave alone is worth the visit.",
     name: "Khalid A.",
     where: "Business Bay, Dubai",
     initial: "K",
@@ -387,7 +387,7 @@ function GoldButton({
   );
 }
 
-function Wonderstouch() {
+function VyneBarbershop() {
   const [location, setLocation] = useState<LocationKey>("dubai");
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -546,7 +546,7 @@ function Wonderstouch() {
         <div style={{ height: 85, marginLeft: 20 }}>
           <img
             src="/wonderstouch logo.png"
-            alt="Wonderstouch Logo"
+            alt="VYNE BARBERSHOP Logo"
             style={{ height: "100%", width: "auto", display: "block" }}
           />
         </div>
@@ -760,7 +760,7 @@ function Wonderstouch() {
               <div style={{ height: 60 }}>
                 <img
                   src="/wonderstouch logo.png"
-                  alt="Wonderstouch Logo"
+                  alt="VYNE BARBERSHOP Logo"
                   style={{ height: "100%", width: "auto", display: "block" }}
                 />
               </div>
@@ -898,7 +898,7 @@ function Wonderstouch() {
             objectFit: "cover",
           }}
         >
-          <source src="/main-hero.mp4" type="video/mp4" />
+          <source src="/vyne hero.mp4" type="video/mp4" />
         </video>
         <div
           style={{
@@ -1321,10 +1321,10 @@ function Wonderstouch() {
                     lineHeight: 1,
                   }}
                 >
-                  About wonderstouch
+                  About vyne-barbershop
                 </h2>
                 {[
-                  "Wonderstouch wasn’t built to be just another barbershop, it was built to be yours.",
+                  "VYNE BARBERSHOP wasn’t built to be just another barbershop, it was built to be yours.",
                   "Two cities. Dubai & Istanbul. 15+ internationally trained barbers. One standard: leave looking your sharpest.",
                   "Walk in. Sit down. Leave sharp.",
                 ].map((p, i) => (
@@ -1366,7 +1366,7 @@ function Wonderstouch() {
               </div>
               <img
                 src="/about%20image.jpeg"
-                alt="About Wonderstouch"
+                alt="About VYNE BARBERSHOP"
                 style={{
                   width: "100%",
                   height: isMobile ? 300 : 540,
@@ -1482,7 +1482,7 @@ function Wonderstouch() {
           >
             <Instagram size={18} color="#D4AF37" />
             <span>Follow our work on Instagram</span>
-            <span style={{ color: "#D4AF37", fontWeight: 600 }}>@wonderstouch</span>
+            <span style={{ color: "#D4AF37", fontWeight: 600 }}>@vyne-barbershop</span>
             <ArrowRight size={14} color="#D4AF37" />
           </div>
         </div>
@@ -1718,7 +1718,7 @@ function Wonderstouch() {
               lineHeight: 1.05,
             }}
           >
-            NEW TO WONDERSTOUCH? 20% OFF YOUR FIRST CUT
+            NEW TO VYNE BARBERSHOP? 20% OFF YOUR FIRST CUT
           </h2>
           <p
             style={{
@@ -1802,7 +1802,7 @@ function Wonderstouch() {
                     margin: "16px 0 24px",
                   }}
                 >
-                  VISIT WONDERSTOUCH
+                  VISIT VYNE BARBERSHOP
                 </h2>
                 <LocationPills location={location} setLocation={setLocation} size="md" />
                 <div style={{ marginTop: 32, display: "flex", flexDirection: "column", gap: 18 }}>
@@ -1876,7 +1876,7 @@ function Wonderstouch() {
               >
                 <iframe
                   key={location}
-                  title={`Wonderstouch ${loc.label} — Google Map`}
+                  title={`VYNE BARBERSHOP ${loc.label} — Google Map`}
                   src={
                     loc.mapEmbedSrc ??
                     googleMapsEmbedSrc(
@@ -1919,7 +1919,7 @@ function Wonderstouch() {
                 className="bebas"
                 style={{ fontSize: 30, color: "#D4AF37", letterSpacing: "0.2em" }}
               >
-                WONDERSTOUCH
+                VYNE BARBERSHOP
               </div>
               <div
                 style={{
@@ -1980,7 +1980,7 @@ function Wonderstouch() {
                 items: [
                   "Umm Al Sheif, Dubai",
                   "Elgün Sokağı, Istanbul",
-                  "hello@wonderstouch.com",
+                  "hello@vyne-barbershop.com",
                   "Sat–Sun: 9am – 10pm",
                 ],
               },
@@ -2027,7 +2027,7 @@ function Wonderstouch() {
               color: "#444",
             }}
           >
-            <div>© 2026 Wonderstouch. All Rights Reserved.</div>
+            <div>© 2026 VYNE BARBERSHOP. All Rights Reserved.</div>
             <div style={{ display: "flex", gap: 16 }}>
               <span className="footer-link" style={{ cursor: "pointer", transition: "color 0.3s" }}>
                 Privacy Policy
@@ -2125,7 +2125,7 @@ function BookingModal({
   });
   const times = ["10:00", "11:30", "13:00", "14:30", "16:00", "17:30", "19:00"];
 
-  const summary = `Booking at Wonderstouch ${LOCATIONS[location].label}\nService: ${service}\nBarber: ${barber}\nDate: ${date}\nTime: ${time}\nName: ${name}\nPhone: ${phone}`;
+  const summary = `Booking at VYNE BARBERSHOP ${LOCATIONS[location].label}\nService: ${service}\nBarber: ${barber}\nDate: ${date}\nTime: ${time}\nName: ${name}\nPhone: ${phone}`;
   const waLink = `https://wa.me/${LOCATIONS[location].whatsapp.replace(/\D/g, "")}?text=${encodeURIComponent(summary)}`;
 
   return (
@@ -2494,7 +2494,7 @@ function BookingModal({
                         lineHeight: 2,
                       }}
                     >
-                      <div><b>Location:</b> Wonderstouch {LOCATIONS[location].label}</div>
+                      <div><b>Location:</b> VYNE BARBERSHOP {LOCATIONS[location].label}</div>
                       <div><b>Service:</b> {service}</div>
                       <div><b>Barber:</b> {barber}</div>
                       <div><b>Date:</b> {date} @ {time}</div>
