@@ -167,7 +167,7 @@ const GALLERY = [
   "/perm-hairstyle.mp4",
   "/men-hair-color.mp4",
   "/our-work.mp4",
-  "/heromen.mp4",
+  "/vyne-hero.mp4",
 ];
 
 const REVIEWS = [
@@ -830,7 +830,7 @@ function VyneBarbershop() {
             objectFit: "cover",
           }}
         >
-          <source src="/vyne hero.mp4" type="video/mp4" />
+          <source src="/vyne-hero.mp4" type="video/mp4" />
         </video>
         <div
           style={{
