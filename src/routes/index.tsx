@@ -317,7 +317,9 @@ function VyneBarbershop() {
     el.addEventListener("mouseenter", handleMouseEnter);
     el.addEventListener("mouseleave", handleMouseLeave);
     el.addEventListener("touchstart", handleMouseEnter);
+    el.addEventListener("touchmove", handleMouseEnter);
     el.addEventListener("touchend", handleMouseLeave);
+    el.addEventListener("touchcancel", handleMouseLeave);
     el.addEventListener("ws-pause", handleMouseEnter);
     el.addEventListener("ws-resume", handleMouseLeave);
 
@@ -327,7 +329,9 @@ function VyneBarbershop() {
       el.removeEventListener("mouseenter", handleMouseEnter);
       el.removeEventListener("mouseleave", handleMouseLeave);
       el.removeEventListener("touchstart", handleMouseEnter);
+      el.removeEventListener("touchmove", handleMouseEnter);
       el.removeEventListener("touchend", handleMouseLeave);
+      el.removeEventListener("touchcancel", handleMouseLeave);
       el.removeEventListener("ws-pause", handleMouseEnter);
       el.removeEventListener("ws-resume", handleMouseLeave);
     };
@@ -361,7 +365,9 @@ function VyneBarbershop() {
     el.addEventListener("mouseenter", handleMouseEnter);
     el.addEventListener("mouseleave", handleMouseLeave);
     el.addEventListener("touchstart", handleMouseEnter);
+    el.addEventListener("touchmove", handleMouseEnter);
     el.addEventListener("touchend", handleMouseLeave);
+    el.addEventListener("touchcancel", handleMouseLeave);
     el.addEventListener("ws-pause", handleMouseEnter);
     el.addEventListener("ws-resume", handleMouseLeave);
 
@@ -371,7 +377,9 @@ function VyneBarbershop() {
       el.removeEventListener("mouseenter", handleMouseEnter);
       el.removeEventListener("mouseleave", handleMouseLeave);
       el.removeEventListener("touchstart", handleMouseEnter);
+      el.removeEventListener("touchmove", handleMouseEnter);
       el.removeEventListener("touchend", handleMouseLeave);
+      el.removeEventListener("touchcancel", handleMouseLeave);
       el.removeEventListener("ws-pause", handleMouseEnter);
       el.removeEventListener("ws-resume", handleMouseLeave);
     };
