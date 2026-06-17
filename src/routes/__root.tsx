@@ -72,22 +72,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "VYNE Barbershop" },
+      { title: "Razor Kings Salon" },
       {
         name: "description",
         content:
-          "Premium barbershop in Ajman offering modern cuts, grooming, and professional barber services.",
+          "Premium salon in Dubai offering modern cuts, grooming, and professional barber services.",
       },
-      { name: "author", content: "VYNE Barbershop" },
-      { property: "og:title", content: "VYNE Barbershop" },
+      { name: "author", content: "Razor Kings Salon" },
+      { property: "og:title", content: "Razor Kings Salon" },
       {
         property: "og:description",
         content:
-          "Premium barbershop in Ajman offering modern cuts, grooming, and professional barber services.",
+          "Premium salon in Dubai offering modern cuts, grooming, and professional barber services.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@vynebarbershop" },
+      { name: "twitter:site", content: "@razorkingssalon" },
     ],
     links: [
       {
