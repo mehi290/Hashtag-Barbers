@@ -22,7 +22,7 @@ import {
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
-  component: HgashtagBarbers,
+  component: HashtagBarbers,
   head: () => ({
     meta: [
       { title: "Hashtag Barbers" },
