@@ -1013,7 +1013,7 @@ function HashtagBarbers() {
                 </h2>
                 {[
                   "Hashtag Barbers wasn’t built to be just another salon, it was built to be yours.",
-                  "Based in Dubai Marina. 15+ internationally trained barbers. One standard: leave looking your sharpest.",
+                  "Based in Dubai Marina, internationally trained barbers. One standard: leave looking your sharpest.",
                   "Walk in. Sit down. Leave sharp.",
                 ].map((p, i) => (
                   <p
@@ -1032,7 +1032,6 @@ function HashtagBarbers() {
                 <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 25 }}>
                   {[
                     "✦ Walk-ins Welcome",
-                    "✦ Premium Men's Products",
                   ].map((t) => (
                     <span
                       key={t}
